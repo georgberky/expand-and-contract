@@ -1,9 +1,6 @@
 package dev.berky.georg.simple;
 
 public class VisaApplicationChecks {
-    public void checkVisaApplication(String visaApplicationId) {
-        checkVisaApplication(new VisaApplicationId(visaApplicationId));
-    }
 
     public void checkVisaApplication(VisaApplicationId visaApplicationId) {
         verify(visaApplicationId.raw());

@@ -8,6 +8,6 @@ public class Client1 {
     }
 
     public void doSomething(String visaApplicationId) {
-        visaApplicationChecks.checkVisaApplication(visaApplicationId);
+        visaApplicationChecks.checkVisaApplication(new VisaApplicationId(visaApplicationId));
     }
 }
