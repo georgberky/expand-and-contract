@@ -8,6 +8,13 @@ public class VisaApplicationChecks {
         part3(visaApplicationId);
     }
 
+    public void checkVisaApplication(VisaApplicationId visaApplicationId) {
+        verify(visaApplicationId.raw());
+        part1(visaApplicationId.raw());
+        part2(visaApplicationId.raw());
+        part3(visaApplicationId.raw());
+    }
+
     private void verify(String visaApplicationId) {
         // a lot of verification code
         // possibly duplicated all over the place
