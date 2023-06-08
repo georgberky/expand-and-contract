@@ -14,4 +14,8 @@ public class GildedItem {
     public void increaseQuality() {
         this.item.quality++;
     }
+
+    public void decreaseSellIn() {
+        this.item.sellIn--;
+    }
 }

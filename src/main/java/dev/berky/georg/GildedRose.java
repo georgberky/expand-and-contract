@@ -43,7 +43,7 @@ class GildedRose {
             }
 
             if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                items[i].sellIn = items[i].sellIn - 1;
+                gildedItems[i].decreaseSellIn();
             }
 
             if (items[i].sellIn < 0) {
