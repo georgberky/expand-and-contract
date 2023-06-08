@@ -6,4 +6,8 @@ public class GildedItem {
     public GildedItem(Item item) {
         this.item = item;
     }
+
+    public void decreaseQuality() {
+        this.item.quality--;
+    }
 }
