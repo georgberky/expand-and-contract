@@ -18,4 +18,8 @@ public class GildedItem {
     public void decreaseSellIn() {
         this.item.sellIn--;
     }
+
+    public void loseAllQuality() {
+        this.item.quality = 0;
+    }
 }

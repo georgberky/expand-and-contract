@@ -55,7 +55,7 @@ class GildedRose {
                             }
                         }
                     } else {
-                        items[i].quality = items[i].quality - items[i].quality;
+                        gildedItems[i].loseAllQuality();
                     }
                 } else {
                     if (items[i].quality < 50) {
