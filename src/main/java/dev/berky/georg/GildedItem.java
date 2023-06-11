@@ -5,6 +5,7 @@ public interface GildedItem {
         return switch(item.name) {
             case "Aged Brie" -> new AgedBrie(item);
             case "Backstage passes to a TAFKAL80ETC concert" -> new BackstagePasses(item);
+            case "Sulfuras, Hand of Ragnaros" -> new Sulfuras(item);
             default -> new StandardGildedItem(item);
         };
     }
