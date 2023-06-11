@@ -9,7 +9,7 @@ class GildedRose {
     public GildedRose(Item[] items) {
         this.items = items;
         this.gildedItems = Arrays.stream(items)
-            .map(GildedItem::new)
+            .map(StandardGildedItem::new)
             .toArray(GildedItem[]::new);
     }
 
