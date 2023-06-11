@@ -31,10 +31,9 @@ public class StandardGildedItem implements GildedItem {
 
     @Override
     public void updateQuality() {
-        if (!name.equals("Aged Brie")
-                && !name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+        if (!isAgedBrie() && !isBackstagePasses()) {
             if (item.quality > 0) {
-                if (!name.equals("Sulfuras, Hand of Ragnaros")) {
+                if (!isSulfuras()) {
                     decreaseQuality();
                 }
             }
@@ -42,7 +41,7 @@ public class StandardGildedItem implements GildedItem {
             if (item.quality < 50) {
                 increaseQuality();
 
-                if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (isBackstagePasses()) {
                     if (item.sellIn < 11) {
                         if (item.quality < 50) {
                             increaseQuality();
@@ -58,15 +57,15 @@ public class StandardGildedItem implements GildedItem {
             }
         }
 
-        if (!name.equals("Sulfuras, Hand of Ragnaros")) {
+        if (!isSulfuras()) {
             decreaseSellIn();
         }
 
         if (item.sellIn < 0) {
-            if (!name.equals("Aged Brie")) {
-                if (!name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (!isAgedBrie()) {
+                if (!isBackstagePasses()) {
                     if (item.quality > 0) {
-                        if (!name.equals("Sulfuras, Hand of Ragnaros")) {
+                        if (!isSulfuras()) {
                             decreaseQuality();
                         }
                     }
@@ -79,5 +78,17 @@ public class StandardGildedItem implements GildedItem {
                 }
             }
         }
+    }
+
+    private boolean isSulfuras() {
+        return name.equals("Sulfuras, Hand of Ragnaros");
+    }
+
+    private boolean isBackstagePasses() {
+        return name.equals("Backstage passes to a TAFKAL80ETC concert");
+    }
+
+    private boolean isAgedBrie() {
+        return name.equals("Aged Brie");
     }
 }
