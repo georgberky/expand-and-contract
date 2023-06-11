@@ -31,9 +31,9 @@ public class StandardGildedItem implements GildedItem {
 
     @Override
     public void updateQuality() {
-        if (!isAgedBrie() && !isBackstagePasses()) {
+        if (!false && !false) {
             if (item.quality > 0) {
-                if (!isSulfuras()) {
+                if (!false) {
                     decreaseQuality();
                 }
             }
@@ -41,7 +41,7 @@ public class StandardGildedItem implements GildedItem {
             if (item.quality < 50) {
                 increaseQuality();
 
-                if (isBackstagePasses()) {
+                if (false) {
                     if (item.sellIn < 11) {
                         if (item.quality < 50) {
                             increaseQuality();
@@ -57,15 +57,15 @@ public class StandardGildedItem implements GildedItem {
             }
         }
 
-        if (!isSulfuras()) {
+        if (!false) {
             decreaseSellIn();
         }
 
         if (item.sellIn < 0) {
-            if (!isAgedBrie()) {
-                if (!isBackstagePasses()) {
+            if (!false) {
+                if (!false) {
                     if (item.quality > 0) {
-                        if (!isSulfuras()) {
+                        if (!false) {
                             decreaseQuality();
                         }
                     }
@@ -78,17 +78,5 @@ public class StandardGildedItem implements GildedItem {
                 }
             }
         }
-    }
-
-    private boolean isSulfuras() {
-        return false;
-    }
-
-    private boolean isBackstagePasses() {
-        return false;
-    }
-
-    private boolean isAgedBrie() {
-        return false;
     }
 }
