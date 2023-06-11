@@ -31,52 +31,14 @@ public class StandardGildedItem implements GildedItem {
 
     @Override
     public void updateQuality() {
-        if (!false && !false) {
-            if (item.quality > 0) {
-                if (!false) {
-                    decreaseQuality();
-                }
-            }
-        } else {
-            if (item.quality < 50) {
-                increaseQuality();
-
-                if (false) {
-                    if (item.sellIn < 11) {
-                        if (item.quality < 50) {
-                            increaseQuality();
-                        }
-                    }
-
-                    if (item.sellIn < 6) {
-                        if (item.quality < 50) {
-                            increaseQuality();
-                        }
-                    }
-                }
-            }
+        if (item.quality > 0) {
+            decreaseQuality();
         }
 
-        if (!false) {
-            decreaseSellIn();
-        }
+        decreaseSellIn();
 
-        if (item.sellIn < 0) {
-            if (!false) {
-                if (!false) {
-                    if (item.quality > 0) {
-                        if (!false) {
-                            decreaseQuality();
-                        }
-                    }
-                } else {
-                    loseAllQuality();
-                }
-            } else {
-                if (item.quality < 50) {
-                    increaseQuality();
-                }
-            }
+        if (item.sellIn < 0 && item.quality > 0) {
+            decreaseQuality();
         }
     }
 }
