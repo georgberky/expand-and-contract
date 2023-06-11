@@ -1,10 +1,10 @@
 package dev.berky.georg;
 
-public class StandardGildedItem implements GildedItem {
+public class RegularItem implements GildedItem {
     private final Item item;
     private final String name;
 
-    public StandardGildedItem(Item item) {
+    public RegularItem(Item item) {
         this.item = item;
         this.name = item.name;
     }
