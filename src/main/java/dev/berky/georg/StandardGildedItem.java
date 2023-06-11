@@ -2,9 +2,11 @@ package dev.berky.georg;
 
 public class StandardGildedItem implements GildedItem {
     private final Item item;
+    private final String name;
 
     public StandardGildedItem(Item item) {
         this.item = item;
+        this.name = item.name;
     }
 
     @Override
@@ -29,10 +31,10 @@ public class StandardGildedItem implements GildedItem {
 
     @Override
     public void updateQuality() {
-        if (!item.name.equals("Aged Brie")
-                && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+        if (!name.equals("Aged Brie")
+                && !name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             if (item.quality > 0) {
-                if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                if (!name.equals("Sulfuras, Hand of Ragnaros")) {
                     decreaseQuality();
                 }
             }
@@ -40,7 +42,7 @@ public class StandardGildedItem implements GildedItem {
             if (item.quality < 50) {
                 increaseQuality();
 
-                if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                     if (item.sellIn < 11) {
                         if (item.quality < 50) {
                             increaseQuality();
@@ -56,15 +58,15 @@ public class StandardGildedItem implements GildedItem {
             }
         }
 
-        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+        if (!name.equals("Sulfuras, Hand of Ragnaros")) {
             decreaseSellIn();
         }
 
         if (item.sellIn < 0) {
-            if (!item.name.equals("Aged Brie")) {
-                if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (!name.equals("Aged Brie")) {
+                if (!name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                     if (item.quality > 0) {
-                        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                        if (!name.equals("Sulfuras, Hand of Ragnaros")) {
                             decreaseQuality();
                         }
                     }
