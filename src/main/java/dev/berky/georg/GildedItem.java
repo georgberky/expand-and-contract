@@ -7,19 +7,19 @@ public class GildedItem {
         this.item = item;
     }
 
-    public void decreaseQuality() {
-        this.item.quality--;
-    }
-
     public void increaseQuality() {
         this.item.quality++;
     }
 
-    public void decreaseSellIn() {
-        this.item.sellIn--;
+    public void decreaseQuality() {
+        this.item.quality--;
     }
 
     public void loseAllQuality() {
         this.item.quality = 0;
+    }
+
+    public void decreaseSellIn() {
+        this.item.sellIn--;
     }
 }
