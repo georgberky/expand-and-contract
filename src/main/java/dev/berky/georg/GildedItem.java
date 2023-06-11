@@ -2,7 +2,9 @@ package dev.berky.georg;
 
 public interface GildedItem {
     static GildedItem from(Item item) {
-        return new StandardGildedItem(item);
+        return switch(item.name) {
+            default -> new StandardGildedItem(item);
+        };
     }
 
     void increaseQuality();
