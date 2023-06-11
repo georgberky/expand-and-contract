@@ -28,7 +28,7 @@ public class StandardGildedItem implements GildedItem {
     }
 
     @Override
-    public void updateQuality(Item item) {
+    public void updateQuality() {
         if (!item.name.equals("Aged Brie")
                 && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             if (item.quality > 0) {

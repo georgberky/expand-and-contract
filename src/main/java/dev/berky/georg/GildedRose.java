@@ -18,7 +18,7 @@ class GildedRose {
             var item = items[i];
             var gildedItem = gildedItems[i];
 
-            gildedItem.updateQuality(item);
+            gildedItem.updateQuality();
         }
     }
 

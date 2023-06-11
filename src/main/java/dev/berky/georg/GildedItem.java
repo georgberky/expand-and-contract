@@ -15,5 +15,5 @@ public interface GildedItem {
 
     void decreaseSellIn();
 
-    void updateQuality(Item item);
+    void updateQuality();
 }
