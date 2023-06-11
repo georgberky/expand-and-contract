@@ -15,7 +15,6 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            var item = items[i];
             var gildedItem = gildedItems[i];
 
             gildedItem.updateQuality();
