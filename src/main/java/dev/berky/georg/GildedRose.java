@@ -9,58 +9,65 @@ class GildedRose {
     public GildedRose(Item[] items) {
         this.items = items;
         this.gildedItems = Arrays.stream(items)
-            .map(GildedItem::from)
-            .toArray(GildedItem[]::new);
+                .map(GildedItem::from)
+                .toArray(GildedItem[]::new);
     }
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            if (!items[i].name.equals("Aged Brie")
-                    && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (items[i].quality > 0) {
-                    if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                        gildedItems[i].decreaseQuality();
-                    }
+            var item = items[i];
+            var gildedItem = gildedItems[i];
+
+            updateQuality(item, gildedItem);
+        }
+    }
+
+    private void updateQuality(Item item, GildedItem gildedItem) {
+        if (!item.name.equals("Aged Brie")
+                && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (item.quality > 0) {
+                if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                    gildedItem.decreaseQuality();
                 }
-            } else {
-                if (items[i].quality < 50) {
-                    gildedItems[i].increaseQuality();
+            }
+        } else {
+            if (item.quality < 50) {
+                gildedItem.increaseQuality();
 
-                    if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (items[i].sellIn < 11) {
-                            if (items[i].quality < 50) {
-                                gildedItems[i].increaseQuality();
-                            }
+                if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                    if (item.sellIn < 11) {
+                        if (item.quality < 50) {
+                            gildedItem.increaseQuality();
                         }
+                    }
 
-                        if (items[i].sellIn < 6) {
-                            if (items[i].quality < 50) {
-                                gildedItems[i].increaseQuality();
-                            }
+                    if (item.sellIn < 6) {
+                        if (item.quality < 50) {
+                            gildedItem.increaseQuality();
                         }
                     }
                 }
             }
+        }
 
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                gildedItems[i].decreaseSellIn();
-            }
+        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            gildedItem.decreaseSellIn();
+        }
 
-            if (items[i].sellIn < 0) {
-                if (!items[i].name.equals("Aged Brie")) {
-                    if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (items[i].quality > 0) {
-                            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                                gildedItems[i].decreaseQuality();
-                            }
+        if (item.sellIn < 0) {
+            if (!item.name.equals("Aged Brie")) {
+                if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                    if (item.quality > 0) {
+                        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                            gildedItem.decreaseQuality();
                         }
-                    } else {
-                        gildedItems[i].loseAllQuality();
                     }
                 } else {
-                    if (items[i].quality < 50) {
-                        gildedItems[i].increaseQuality();
-                    }
+                    gildedItem.loseAllQuality();
+                }
+            } else {
+                if (item.quality < 50) {
+                    gildedItem.increaseQuality();
                 }
             }
         }
