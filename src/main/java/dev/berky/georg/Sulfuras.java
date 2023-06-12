@@ -10,22 +10,22 @@ public class Sulfuras implements GildedItem {
 
     @Override
     public void increaseQuality() {
-        this.item.quality++;
+        //doesn't happen
     }
 
     @Override
     public void decreaseQuality() {
-        this.item.quality--;
+        //doesn't happen
     }
 
     @Override
     public void loseAllQuality() {
-        this.item.quality = 0;
+        //doesn't happen
     }
 
     @Override
     public void decreaseSellIn() {
-        this.item.sellIn--;
+        //doesn't happen
     }
 
     @Override
