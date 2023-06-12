@@ -9,6 +9,21 @@ public class BackstagePasses implements GildedItem {
     }
 
     @Override
+    public String name() {
+        return name;
+    }
+
+    @Override
+    public int quality() {
+        return item.quality;
+    }
+
+    @Override
+    public int sellIn() {
+        return item.sellIn;
+    }
+
+    @Override
     public void increaseQuality() {
         this.item.quality++;
     }

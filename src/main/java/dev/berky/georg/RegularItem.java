@@ -8,6 +8,21 @@ public class RegularItem implements GildedItem {
     }
 
     @Override
+    public String name() {
+        return item.name;
+    }
+
+    @Override
+    public int quality() {
+        return item.quality;
+    }
+
+    @Override
+    public int sellIn() {
+        return item.sellIn;
+    }
+
+    @Override
     @Deprecated
     public void increaseQuality() {
         //doesn't happen

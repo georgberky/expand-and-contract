@@ -9,6 +9,21 @@ public class Sulfuras implements GildedItem {
     }
 
     @Override
+    public String name() {
+        return name;
+    }
+
+    @Override
+    public int quality() {
+        return item.quality;
+    }
+
+    @Override
+    public int sellIn() {
+        return item.sellIn;
+    }
+
+    @Override
     @Deprecated
     public void increaseQuality() {
         //doesn't happen

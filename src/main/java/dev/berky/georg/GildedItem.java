@@ -10,6 +10,12 @@ public interface GildedItem {
         };
     }
 
+    String name();
+
+    int quality();
+
+    int sellIn();
+
     void increaseQuality();
 
     void decreaseQuality();
