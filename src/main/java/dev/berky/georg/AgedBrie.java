@@ -15,12 +15,12 @@ public class AgedBrie implements GildedItem {
 
     @Override
     public void decreaseQuality() {
-        this.item.quality--;
+        //doesn't happen
     }
 
     @Override
     public void loseAllQuality() {
-        this.item.quality = 0;
+        //doesn't happen
     }
 
     @Override
