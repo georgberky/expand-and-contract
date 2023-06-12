@@ -9,21 +9,25 @@ public class Sulfuras implements GildedItem {
     }
 
     @Override
+    @Deprecated
     public void increaseQuality() {
         //doesn't happen
     }
 
     @Override
+    @Deprecated
     public void decreaseQuality() {
         //doesn't happen
     }
 
     @Override
+    @Deprecated
     public void loseAllQuality() {
         //doesn't happen
     }
 
     @Override
+    @Deprecated
     public void decreaseSellIn() {
         //doesn't happen
     }

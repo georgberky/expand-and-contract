@@ -8,6 +8,7 @@ public class RegularItem implements GildedItem {
     }
 
     @Override
+    @Deprecated
     public void increaseQuality() {
         //doesn't happen
     }
@@ -18,6 +19,7 @@ public class RegularItem implements GildedItem {
     }
 
     @Override
+    @Deprecated
     public void loseAllQuality() {
         //doesn't happen
     }

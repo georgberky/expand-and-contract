@@ -14,6 +14,7 @@ public class BackstagePasses implements GildedItem {
     }
 
     @Override
+    @Deprecated
     public void decreaseQuality() {
         //doesn't happen
     }

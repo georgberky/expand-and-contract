@@ -14,11 +14,13 @@ public class AgedBrie implements GildedItem {
     }
 
     @Override
+    @Deprecated
     public void decreaseQuality() {
         //doesn't happen
     }
 
     @Override
+    @Deprecated
     public void loseAllQuality() {
         //doesn't happen
     }
