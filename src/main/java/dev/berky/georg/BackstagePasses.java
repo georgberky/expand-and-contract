@@ -15,7 +15,7 @@ public class BackstagePasses implements GildedItem {
 
     @Override
     public void decreaseQuality() {
-        this.item.quality--;
+        //doesn't happen
     }
 
     @Override
