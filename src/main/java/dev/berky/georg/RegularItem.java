@@ -9,7 +9,7 @@ public class RegularItem implements GildedItem {
 
     @Override
     public void increaseQuality() {
-        this.item.quality++;
+        //doesn't happen
     }
 
     @Override
@@ -19,7 +19,7 @@ public class RegularItem implements GildedItem {
 
     @Override
     public void loseAllQuality() {
-        this.item.quality = 0;
+        //doesn't happen
     }
 
     @Override
