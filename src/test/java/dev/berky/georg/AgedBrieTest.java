@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import static dev.berky.georg.GildedRoseFixtures.anySellInDate;
 import static dev.berky.georg.GildedRoseFixtures.maxQuality;
 import static dev.berky.georg.GildedRoseFixtures.notPastSellInDate;
@@ -27,7 +25,6 @@ class AgedBrieTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isEqualTo(initialQuality + 1);
         assertThatItemHasQuality(item, initialQuality + 1);
     }
 
@@ -38,7 +35,6 @@ class AgedBrieTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isEqualTo(maxQuality());
         assertThatItemHasQuality(item, maxQuality());
     }
 
@@ -50,7 +46,6 @@ class AgedBrieTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isEqualTo(initialQuality + 2);
         assertThatItemHasQuality(item, initialQuality + 2);
     }
 }
