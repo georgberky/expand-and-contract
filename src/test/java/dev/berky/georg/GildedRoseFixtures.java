@@ -44,4 +44,8 @@ final class GildedRoseFixtures {
     public static void assertThatItemHasQuality(Item item, int expected) {
         assertThat(item.quality).isEqualTo(expected);
     }
+
+    public static void assertThatItemHasSellIn(Item item, int expected) {
+        assertThat(item.sellIn).isEqualTo(expected);
+    }
 }

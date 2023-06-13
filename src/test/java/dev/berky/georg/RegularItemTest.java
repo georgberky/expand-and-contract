@@ -31,6 +31,7 @@ class RegularItemTest {
         whenOneDayPasses(item);
 
         assertThat(item.sellIn).isEqualTo(initialSellInDate - 1);
+        assertThatItemHasSellIn(item, initialSellInDate - 1);
     }
 
     @Test
