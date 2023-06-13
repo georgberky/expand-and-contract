@@ -1,6 +1,10 @@
 package dev.berky.georg;
 
 final class GildedRoseFixtures {
+    public static Item givenItem(String name, int sellIn, int quality) {
+        return new Item(name, sellIn, quality);
+    }
+
     public static int maxQuality() {
         return 50;
     }
