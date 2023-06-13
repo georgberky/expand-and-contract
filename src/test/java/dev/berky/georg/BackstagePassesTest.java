@@ -12,7 +12,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import static dev.berky.georg.GildedRoseFixtures.maxQuality;
@@ -32,7 +31,6 @@ class BackstagePassesTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isEqualTo(initialQuality + 2);
         assertThatItemHasQuality(item, initialQuality + 2);
     }
 
@@ -55,7 +53,6 @@ class BackstagePassesTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isEqualTo(maxQuality());
         assertThatItemHasQuality(item, maxQuality());
     }
 
@@ -67,7 +64,6 @@ class BackstagePassesTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isEqualTo(initialQuality + 3);
         assertThatItemHasQuality(item, initialQuality + 3);
     }
 
@@ -90,7 +86,6 @@ class BackstagePassesTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isEqualTo(maxQuality());
         assertThatItemHasQuality(item, maxQuality());
     }
 
@@ -102,7 +97,6 @@ class BackstagePassesTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isZero();
         assertThatItemHasQuality(item, zeroQuality());
     }
 }
