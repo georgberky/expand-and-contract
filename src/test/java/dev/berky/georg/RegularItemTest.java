@@ -12,10 +12,10 @@ import static dev.berky.georg.GildedRoseFixtures.notPastSellInDate;
 import static dev.berky.georg.GildedRoseFixtures.pastSellInDate;
 import static dev.berky.georg.GildedRoseFixtures.zeroQuality;
 
-import static dev.berky.georg.GildedRoseFixtures.givenItem;
-import static dev.berky.georg.GildedRoseFixtures.whenOneDayPasses;
-import static dev.berky.georg.GildedRoseFixtures.assertThatItemHasQuality;
-import static dev.berky.georg.GildedRoseFixtures.assertThatItemHasSellIn;
+import static dev.berky.georg.GildedItemFixtures.givenItem;
+import static dev.berky.georg.GildedItemFixtures.whenOneDayPasses;
+import static dev.berky.georg.GildedItemFixtures.assertThatItemHasQuality;
+import static dev.berky.georg.GildedItemFixtures.assertThatItemHasSellIn;
 
 class RegularItemTest {
 
