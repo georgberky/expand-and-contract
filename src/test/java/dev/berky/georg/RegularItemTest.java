@@ -20,7 +20,7 @@ class RegularItemTest {
     @ValueSource(ints = { 10, 11, 12 })
     @DisplayName("Regular Item: decreases quality by one")
     void whenDayPasses_normalItem_shouldDecreaseQualityByOne(int initialQuality) {
-        Item item = new Item("regular item", notPastSellInDate(), initialQuality);
+        var item = new Item("regular item", notPastSellInDate(), initialQuality);
 
         whenOneDayPasses(item);
 
@@ -31,7 +31,7 @@ class RegularItemTest {
     @ValueSource(ints = { 10, 11, 12 })
     @DisplayName("Regular Item: decreases sell-in days by one")
     void whenDayPasses_normalItem_shouldDecreaseSellInDateByOne(int initialSellInDate) {
-        Item item = new Item("regular item", initialSellInDate, anyQuality());
+        var item = new Item("regular item", initialSellInDate, anyQuality());
 
         whenOneDayPasses(item);
 
@@ -41,7 +41,7 @@ class RegularItemTest {
     @Test
     @DisplayName("Regular item: does not decrease quality below zero")
     void whenDayPasses_normalItemWithZeroQuality_shouldNotDecreaseQuality() {
-        Item item = new Item("regular item", anySellInDate(), zeroQuality());
+        var item = new Item("regular item", anySellInDate(), zeroQuality());
 
         whenOneDayPasses(item);
 
@@ -52,11 +52,10 @@ class RegularItemTest {
     @ValueSource(ints = { 10, 11, 12 })
     @DisplayName("Regular item: past sell in date → decreases quality by two")
     void whenDayPasses_normalItemWithNegativeSellDate_shouldDecreaseQualityeByTwo(int initialQuality) {
-        Item item = new Item("regular item", pastSellInDate(), initialQuality);
+        var item = new Item("regular item", pastSellInDate(), initialQuality);
 
         whenOneDayPasses(item);
 
         assertThat(item.quality).isEqualTo(initialQuality - 2);
     }
-
 }
