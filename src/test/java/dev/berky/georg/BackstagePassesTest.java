@@ -17,9 +17,9 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static dev.berky.georg.GildedRoseFixtures.maxQuality;
 import static dev.berky.georg.GildedRoseFixtures.zeroQuality;
 
-import static dev.berky.georg.GildedRoseFixtures.givenItem;
-import static dev.berky.georg.GildedRoseFixtures.whenOneDayPasses;
-import static dev.berky.georg.GildedRoseFixtures.assertThatItemHasQuality;
+import static dev.berky.georg.GildedItemFixtures.givenItem;
+import static dev.berky.georg.GildedItemFixtures.whenOneDayPasses;
+import static dev.berky.georg.GildedItemFixtures.assertThatItemHasQuality;
 
 class BackstagePassesTest {
 
