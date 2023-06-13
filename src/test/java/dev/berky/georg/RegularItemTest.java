@@ -19,7 +19,6 @@ class RegularItemTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isEqualTo(initialQuality - 1);
         assertThatItemHasQuality(item, initialQuality - 1);
     }
 
@@ -41,7 +40,6 @@ class RegularItemTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isEqualTo(zeroQuality());
         assertThatItemHasQuality(item, zeroQuality());
     }
 
@@ -53,7 +51,6 @@ class RegularItemTest {
 
         whenOneDayPasses(item);
 
-        assertThat(item.quality).isEqualTo(initialQuality - 2);
         assertThatItemHasQuality(item, initialQuality - 2);
     }
 }
