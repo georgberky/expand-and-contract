@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class RegularItemTest {
 
     @ParameterizedTest(name = "initial quality: {0}")
-    @ValueSource(ints = { 10, 11, 12 })
+    @ValueSource(ints = {10, 11, 12})
     @DisplayName("Regular Item: decreases quality by one")
     void whenDayPasses_normalItem_shouldDecreaseQualityByOne(int initialQuality) {
         var item = givenItem("regular item", notPastSellInDate(), initialQuality);
@@ -20,10 +20,11 @@ class RegularItemTest {
         whenOneDayPasses(item);
 
         assertThat(item.quality).isEqualTo(initialQuality - 1);
+        assertThatItemHasQuality(item, initialQuality - 1);
     }
 
     @ParameterizedTest(name = "initial sell-in days: {0}")
-    @ValueSource(ints = { 10, 11, 12 })
+    @ValueSource(ints = {10, 11, 12})
     @DisplayName("Regular Item: decreases sell-in days by one")
     void whenDayPasses_normalItem_shouldDecreaseSellInDateByOne(int initialSellInDate) {
         var item = givenItem("regular item", initialSellInDate, anyQuality());
@@ -41,10 +42,11 @@ class RegularItemTest {
         whenOneDayPasses(item);
 
         assertThat(item.quality).isEqualTo(zeroQuality());
+        assertThatItemHasQuality(item, zeroQuality());
     }
 
     @ParameterizedTest(name = "initial quality: {0}")
-    @ValueSource(ints = { 10, 11, 12 })
+    @ValueSource(ints = {10, 11, 12})
     @DisplayName("Regular item: past sell in date → decreases quality by two")
     void whenDayPasses_normalItemWithNegativeSellDate_shouldDecreaseQualityeByTwo(int initialQuality) {
         var item = givenItem("regular item", pastSellInDate(), initialQuality);
@@ -52,5 +54,6 @@ class RegularItemTest {
         whenOneDayPasses(item);
 
         assertThat(item.quality).isEqualTo(initialQuality - 2);
+        assertThatItemHasQuality(item, initialQuality - 2);
     }
 }

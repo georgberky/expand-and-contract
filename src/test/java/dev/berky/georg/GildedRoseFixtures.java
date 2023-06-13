@@ -1,5 +1,7 @@
 package dev.berky.georg;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 final class GildedRoseFixtures {
     public static Item givenItem(String name, int sellIn, int quality) {
         return new Item(name, sellIn, quality);
@@ -37,5 +39,9 @@ final class GildedRoseFixtures {
     public static GildedRose createApp(Item item) {
         Item[] items = new Item[]{item};
         return new GildedRose(items);
+    }
+
+    public static void assertThatItemHasQuality(Item item, int expected) {
+        assertThat(item.quality).isEqualTo(expected);
     }
 }
