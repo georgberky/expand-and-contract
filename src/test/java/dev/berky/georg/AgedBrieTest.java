@@ -13,7 +13,7 @@ import static dev.berky.georg.GildedRoseFixtures.pastSellInDate;
 
 import static dev.berky.georg.GildedItemFixtures.givenItem;
 import static dev.berky.georg.GildedItemFixtures.whenOneDayPasses;
-import static dev.berky.georg.GildedItemFixtures.assertThatItemHasQuality;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class AgedBrieTest {
 
@@ -25,7 +25,7 @@ class AgedBrieTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, initialQuality + 1);
+        assertThat(item.quality()).isEqualTo(initialQuality + 1);
     }
 
     @Test
@@ -35,7 +35,7 @@ class AgedBrieTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, maxQuality());
+        assertThat(item.quality()).isEqualTo(maxQuality());
     }
 
     @ParameterizedTest(name = "initial quality: {0}")
@@ -46,6 +46,6 @@ class AgedBrieTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, initialQuality + 2);
+        assertThat(item.quality()).isEqualTo(initialQuality + 2);
     }
 }

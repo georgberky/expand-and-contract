@@ -9,7 +9,7 @@ import static dev.berky.georg.GildedRoseFixtures.notPastSellInDate;
 
 import static dev.berky.georg.GildedItemFixtures.givenItem;
 import static dev.berky.georg.GildedItemFixtures.whenOneDayPasses;
-import static dev.berky.georg.GildedItemFixtures.assertThatItemHasQuality;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class SulfurasTest {
 
@@ -21,6 +21,6 @@ class SulfurasTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, initialQuality);
+        assertThat(item.quality()).isEqualTo(initialQuality);
     }
 }

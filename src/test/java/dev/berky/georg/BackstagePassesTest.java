@@ -12,6 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import static dev.berky.georg.GildedRoseFixtures.maxQuality;
@@ -19,7 +20,6 @@ import static dev.berky.georg.GildedRoseFixtures.zeroQuality;
 
 import static dev.berky.georg.GildedItemFixtures.givenItem;
 import static dev.berky.georg.GildedItemFixtures.whenOneDayPasses;
-import static dev.berky.georg.GildedItemFixtures.assertThatItemHasQuality;
 
 class BackstagePassesTest {
 
@@ -31,7 +31,7 @@ class BackstagePassesTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, initialQuality + 2);
+        assertThat(item.quality()).isEqualTo(initialQuality + 2);
     }
 
     static Stream<Arguments> backstagePassesDaysBetween10and5() {
@@ -53,7 +53,7 @@ class BackstagePassesTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, maxQuality());
+        assertThat(item.quality()).isEqualTo(maxQuality());
     }
 
     @ParameterizedTest(name = "initial sell-in days: {0}, initial quality: {1}")
@@ -64,7 +64,7 @@ class BackstagePassesTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, initialQuality + 3);
+        assertThat(item.quality()).isEqualTo(initialQuality + 3);
     }
 
     static Stream<Arguments> backstagePassesDaysBetween5And0() {
@@ -86,7 +86,7 @@ class BackstagePassesTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, maxQuality());
+        assertThat(item.quality()).isEqualTo(maxQuality());
     }
 
     @ParameterizedTest(name = "initial sell-in days: {0}")
@@ -97,6 +97,6 @@ class BackstagePassesTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, zeroQuality());
+        assertThat(item.quality()).isEqualTo(zeroQuality());
     }
 }

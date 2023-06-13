@@ -14,8 +14,7 @@ import static dev.berky.georg.GildedRoseFixtures.zeroQuality;
 
 import static dev.berky.georg.GildedItemFixtures.givenItem;
 import static dev.berky.georg.GildedItemFixtures.whenOneDayPasses;
-import static dev.berky.georg.GildedItemFixtures.assertThatItemHasQuality;
-import static dev.berky.georg.GildedItemFixtures.assertThatItemHasSellIn;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class RegularItemTest {
 
@@ -27,7 +26,7 @@ class RegularItemTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, initialQuality - 1);
+        assertThat(item.quality()).isEqualTo(initialQuality - 1);
     }
 
     @ParameterizedTest(name = "initial sell-in days: {0}")
@@ -38,7 +37,7 @@ class RegularItemTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasSellIn(item, initialSellInDate - 1);
+        assertThat(item.sellIn()).isEqualTo(initialSellInDate - 1);
     }
 
     @Test
@@ -48,7 +47,7 @@ class RegularItemTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, zeroQuality());
+        assertThat(item.quality()).isEqualTo(zeroQuality());
     }
 
     @ParameterizedTest(name = "initial quality: {0}")
@@ -59,6 +58,6 @@ class RegularItemTest {
 
         whenOneDayPasses(item);
 
-        assertThatItemHasQuality(item, initialQuality - 2);
+        assertThat(item.quality()).isEqualTo(initialQuality - 2);
     }
 }

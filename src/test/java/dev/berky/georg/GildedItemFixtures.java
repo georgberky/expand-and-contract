@@ -12,12 +12,4 @@ final class GildedItemFixtures {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
     }
-
-    public static void assertThatItemHasQuality(GildedItem item, int expected) {
-        assertThat(item.quality()).isEqualTo(expected);
-    }
-
-    public static void assertThatItemHasSellIn(GildedItem item, int expected) {
-        assertThat(item.sellIn()).isEqualTo(expected);
-    }
 }
