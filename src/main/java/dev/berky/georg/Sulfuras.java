@@ -5,10 +5,6 @@ public class Sulfuras implements GildedItem {
     private final int sellIn;
     private final int quality;
 
-    public Sulfuras(Item item) {
-        this(item.sellIn, item.quality);
-    }
-
     public Sulfuras(int sellIn, int quality) {
         this.sellIn = sellIn;
         this.quality = quality;
