@@ -5,10 +5,6 @@ public class BackstagePasses implements GildedItem {
     private int quality;
     private int sellIn;
 
-    public BackstagePasses(Item item) {
-        this(item.sellIn, item.quality);
-    }
-
     public BackstagePasses(int sellIn, int quality) {
         this.sellIn = sellIn;
         this.quality = quality;

@@ -6,7 +6,7 @@ public interface GildedItem {
         Item item = new Item(name, sellIn, quality);
         return switch (item.name) {
             case "Aged Brie" -> new AgedBrie(item);
-            case "Backstage passes to a TAFKAL80ETC concert" -> new BackstagePasses(item);
+            case "Backstage passes to a TAFKAL80ETC concert" -> new BackstagePasses(item.sellIn, item.quality);
             case "Sulfuras, Hand of Ragnaros" -> new Sulfuras(item);
             default -> new RegularItem(item.name, item.sellIn, item.quality);
         };
