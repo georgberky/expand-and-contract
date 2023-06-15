@@ -2,12 +2,16 @@ package dev.berky.georg;
 
 public class AgedBrie implements GildedItem {
     private final String name = "Aged Brie";
-    private int quality;
     private int sellIn;
+    private int quality;
 
     public AgedBrie(Item item) {
-        this.quality = item.quality;
-        this.sellIn = item.sellIn;
+        this(item.sellIn, item.quality);
+    }
+
+    public AgedBrie(int sellIn, int quality) {
+        this.sellIn = sellIn;
+        this.quality = quality;
     }
 
     @Override
