@@ -1,25 +1,29 @@
 package dev.berky.georg;
 
 public class RegularItem implements GildedItem {
-    private final Item item;
+    private final String name;
+    private int quality;
+    private int sellIn;
 
     public RegularItem(Item item) {
-        this.item = item;
+        this.name = item.name;
+        this.quality = item.quality;
+        this.sellIn = item.sellIn;
     }
 
     @Override
     public String name() {
-        return item.name;
+        return name;
     }
 
     @Override
     public int quality() {
-        return item.quality;
+        return quality;
     }
 
     @Override
     public int sellIn() {
-        return item.sellIn;
+        return sellIn;
     }
 
     @Override
@@ -30,7 +34,7 @@ public class RegularItem implements GildedItem {
 
     @Override
     public void decreaseQuality() {
-        this.item.quality--;
+        quality--;
     }
 
     @Override
@@ -41,18 +45,18 @@ public class RegularItem implements GildedItem {
 
     @Override
     public void decreaseSellIn() {
-        this.item.sellIn--;
+        sellIn--;
     }
 
     @Override
     public void updateQuality() {
-        if (item.quality > 0) {
+        if (quality > 0) {
             decreaseQuality();
         }
 
         decreaseSellIn();
 
-        if (item.sellIn < 0 && item.quality > 0) {
+        if (sellIn < 0 && quality > 0) {
             decreaseQuality();
         }
     }
