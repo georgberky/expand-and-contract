@@ -5,10 +5,6 @@ public class AgedBrie implements GildedItem {
     private int sellIn;
     private int quality;
 
-    public AgedBrie(Item item) {
-        this(item.sellIn, item.quality);
-    }
-
     public AgedBrie(int sellIn, int quality) {
         this.sellIn = sellIn;
         this.quality = quality;
