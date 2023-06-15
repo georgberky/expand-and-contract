@@ -6,9 +6,13 @@ public class RegularItem implements GildedItem {
     private int sellIn;
 
     public RegularItem(Item item) {
-        this.name = item.name;
-        this.quality = item.quality;
-        this.sellIn = item.sellIn;
+        this(item.name, item.sellIn, item.quality);
+    }
+
+    public RegularItem(String name, int sellIn, int quality) {
+        this.name = name;
+        this.quality = quality;
+        this.sellIn = sellIn;
     }
 
     @Override
