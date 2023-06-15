@@ -1,11 +1,13 @@
 package dev.berky.georg;
 
 public class AgedBrie implements GildedItem {
-    private final Item item;
     private final String name = "Aged Brie";
+    private int quality;
+    private int sellIn;
 
     public AgedBrie(Item item) {
-        this.item = item;
+        this.quality = item.quality;
+        this.sellIn = item.sellIn;
     }
 
     @Override
@@ -15,17 +17,17 @@ public class AgedBrie implements GildedItem {
 
     @Override
     public int quality() {
-        return item.quality;
+        return quality;
     }
 
     @Override
     public int sellIn() {
-        return item.sellIn;
+        return sellIn;
     }
 
     @Override
     public void increaseQuality() {
-        this.item.quality++;
+        quality++;
     }
 
     @Override
@@ -42,19 +44,19 @@ public class AgedBrie implements GildedItem {
 
     @Override
     public void decreaseSellIn() {
-        this.item.sellIn--;
+        sellIn--;
     }
 
     @Override
     public void updateQuality() {
-        if (item.quality < 50) {
+        if (quality < 50) {
             increaseQuality();
         }
 
         decreaseSellIn();
 
-        if (item.sellIn < 0) {
-            if (item.quality < 50) {
+        if (sellIn < 0) {
+            if (quality < 50) {
                 increaseQuality();
             }
         }
