@@ -6,13 +6,6 @@ class GildedRose {
     Item[] items;
     GildedItem[] gildedItems;
 
-    public GildedRose(Item[] items) {
-        this.items = items;
-        this.gildedItems = Arrays.stream(items)
-                .map(GildedItem::from)
-                .toArray(GildedItem[]::new);
-    }
-
     public GildedRose(GildedItem[] gildedItems) {
         this.gildedItems = gildedItems;
         this.items = Arrays.stream(gildedItems)
