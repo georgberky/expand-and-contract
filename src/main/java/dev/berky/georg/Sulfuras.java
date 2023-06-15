@@ -1,11 +1,13 @@
 package dev.berky.georg;
 
 public class Sulfuras implements GildedItem {
-    private final Item item;
     private final String name = "Sulfuras, Hand of Ragnaros";
+    private final int sellIn;
+    private final int quality;
 
     public Sulfuras(Item item) {
-        this.item = item;
+        this.sellIn = item.sellIn;
+        this.quality = item.quality;
     }
 
     @Override
@@ -15,12 +17,12 @@ public class Sulfuras implements GildedItem {
 
     @Override
     public int quality() {
-        return item.quality;
+        return quality;
     }
 
     @Override
     public int sellIn() {
-        return item.sellIn;
+        return sellIn;
     }
 
     @Override
