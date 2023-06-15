@@ -1,11 +1,13 @@
 package dev.berky.georg;
 
 public class BackstagePasses implements GildedItem {
-    private final Item item;
     private final String name = "Backstage passes to a TAFKAL80ETC concert";
+    private int quality;
+    private int sellIn;
 
     public BackstagePasses(Item item) {
-        this.item = item;
+        this.quality = item.quality;
+        this.sellIn = item.sellIn;
     }
 
     @Override
@@ -15,17 +17,17 @@ public class BackstagePasses implements GildedItem {
 
     @Override
     public int quality() {
-        return item.quality;
+        return quality;
     }
 
     @Override
     public int sellIn() {
-        return item.sellIn;
+        return sellIn;
     }
 
     @Override
     public void increaseQuality() {
-        this.item.quality++;
+        quality++;
     }
 
     @Override
@@ -36,27 +38,27 @@ public class BackstagePasses implements GildedItem {
 
     @Override
     public void loseAllQuality() {
-        this.item.quality = 0;
+        quality = 0;
     }
 
     @Override
     public void decreaseSellIn() {
-        this.item.sellIn--;
+        sellIn--;
     }
 
     @Override
     public void updateQuality() {
-        if (item.quality < 50) {
+        if (quality < 50) {
             increaseQuality();
 
-            if (item.sellIn < 11) {
-                if (item.quality < 50) {
+            if (sellIn < 11) {
+                if (quality < 50) {
                     increaseQuality();
                 }
             }
 
-            if (item.sellIn < 6) {
-                if (item.quality < 50) {
+            if (sellIn < 6) {
+                if (quality < 50) {
                     increaseQuality();
                 }
             }
@@ -64,7 +66,7 @@ public class BackstagePasses implements GildedItem {
 
         decreaseSellIn();
 
-        if (item.sellIn < 0) {
+        if (sellIn < 0) {
             loseAllQuality();
         }
     }
